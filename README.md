@@ -21,7 +21,7 @@ as much as the rest.
 2. Compile the code:
 
     ```bash
-    gcc -o dining_philosophers dining_philosophers.c -lpthread
+    gcc -o dining_philosophers dining_philosophers.c
     ```
 
 3. Run the executable:
