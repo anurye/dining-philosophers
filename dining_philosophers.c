@@ -1,5 +1,12 @@
 #include "dining_philosophers.h"
 
+#define NUM_PHILOSOPHERS 5
+#define THINKING 0
+#define HUNGRY 1
+#define EATING 2
+#define LEFT (i + NUM_PHILOSOPHERS - 1) % NUM_PHILOSOPHERS
+#define RIGHT (i + 1) % NUM_PHILOSOPHERS
+
 // Structure for shared variable, state
 struct shm
 {
