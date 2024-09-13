@@ -63,8 +63,8 @@ void initialize_shared_memory()
 
 void initialize_semaphores()
 {
-    // create a group of NUM_PHILOSOPHERS + 1 semaphores
-    sem_group = semget(IPC_PRIVATE, NUM_PHILOSOPHERS + 1, IPC_CREAT | 0666);
+    // create a group of NUM_SEMAPHORES semaphores
+    sem_group = semget(IPC_PRIVATE, NUM_SEMAPHORES, IPC_CREAT | 0666);
     if (sem_group == -1) {
         fprintf(stderr, "error in creating semaphore group\n");
         exit(-1);
@@ -72,7 +72,7 @@ void initialize_semaphores()
         printf("Semaphores group id: %d\n", sem_group);
     }
 
-    semun_var.array = (unsigned short *)calloc(NUM_PHILOSOPHERS + 1, sizeof(short));
+    semun_var.array = (unsigned short *)calloc(NUM_SEMAPHORES, sizeof(short));
     for (int i = 0; i < NUM_PHILOSOPHERS; i++) {
         semun_var.array[i] = 0; // for pholosophers
     }

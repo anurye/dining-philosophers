@@ -16,6 +16,7 @@
 #define EATING 2
 #define LEFT (i + NUM_PHILOSOPHERS - 1) % NUM_PHILOSOPHERS
 #define RIGHT (i + 1) % NUM_PHILOSOPHERS
+#define NUM_SEMAPHORES (NUM_PHILOSOPHERS + 1)
 
 /**
  * @brief Initialize shared memory for containing the critical section.
